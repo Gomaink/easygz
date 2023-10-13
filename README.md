@@ -1,6 +1,6 @@
 # EasyGZ
 
-[![sampctl](https://img.shields.io/badge/sampctl-easygz_inc-2f2f2f.svg?style=for-the-badge)](https://github.com/Gomaink/easygz_inc)
+[![sampctl](https://img.shields.io/badge/sampctl-easygz_inc-2f2f2f.svg?style=for-the-badge)](https://github.com/Gomaink/easygz)
 
 A filterscript that helps you easily and dynamically create gangzones with SQLite saves.
 
