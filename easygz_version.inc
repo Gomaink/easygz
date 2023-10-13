@@ -3,5 +3,5 @@
 // To update the version number for a new release, run "sampctl package release"
 
 #define EASYGZ_VERSION_MAJOR (0)
-#define EASYGZ_VERSION_MINOR (0)
-#define EASYGZ_VERSION_PATCH (2)
+#define EASYGZ_VERSION_MINOR (1)
+#define EASYGZ_VERSION_PATCH (0)
