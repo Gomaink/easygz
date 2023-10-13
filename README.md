@@ -1,6 +1,6 @@
 # EasyGZ
 
-[![sampctl](https://img.shields.io/badge/sampctl-easygz_inc-2f2f2f.svg?style=for-the-badge)](https://github.com/Gomaink/easygz)
+[![sampctl](https://img.shields.io/badge/sampctl-easygz_inc-2f2f2f.svg?style=for-the-badge)](https://github.com/Gomaink/easygz_inc)
 
 A filterscript that helps you easily and dynamically create gangzones with SQLite saves.
 
@@ -26,8 +26,8 @@ Making sure of this, in your server.cfg in the "filterscripts" field add easygz.
 
 ## Commands
 
-- /creategangzone
-- /destroygangzone <id>
+/creategangzone
+/destroygangzone <id>
 
 To test, simply run the package:
 
