@@ -30,12 +30,12 @@ Making sure of this, in your server.cfg in the "filterscripts" field add easygz.
 - /creategangzone ! Need to be logged in RCON !
 - /destroygangzone <id> ! Need to be logged in RCON !
 
-To test, simply run the package:
-
 ## Images
 ![](https://i.imgur.com/yH8jmFo.png)
 
 ![](https://i.imgur.com/juiEAZl.png)
+
+To test, simply run the package:
 
 ```bash
 sampctl package run
