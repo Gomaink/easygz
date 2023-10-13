@@ -4,11 +4,11 @@
 
 A filterscript that helps you easily and dynamically create gangzones with SQLite saves.
 
-[img]https://i.imgur.com/yH8jmFo.png[/img]
+![](https://i.imgur.com/yH8jmFo.png)
 
-[img]https://i.imgur.com/hqDPQOv.png[/img]
+![](https://i.imgur.com/hqDPQOv.png)
 
-[img]https://i.imgur.com/juiEAZl.png[/img]
+![](https://i.imgur.com/juiEAZl.png)
 
 ## Installation
 
