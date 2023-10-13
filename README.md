@@ -4,11 +4,7 @@
 
 A filterscript that helps you easily and dynamically create gangzones with SQLite saves.
 
-![](https://i.imgur.com/yH8jmFo.png)
-
 ![](https://i.imgur.com/hqDPQOv.png)
-
-![](https://i.imgur.com/juiEAZl.png)
 
 ## Installation
 
@@ -35,6 +31,11 @@ Making sure of this, in your server.cfg in the "filterscripts" field add easygz.
 - /destroygangzone <id> ! Need to be logged in RCON !
 
 To test, simply run the package:
+
+## Images
+![](https://i.imgur.com/yH8jmFo.png)
+
+![](https://i.imgur.com/juiEAZl.png)
 
 ```bash
 sampctl package run
