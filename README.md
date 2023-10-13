@@ -27,8 +27,10 @@ Making sure of this, in your server.cfg in the "filterscripts" field add easygz.
 
 ## Commands
 
-- /creategangzone ! Need to be logged in RCON !
-- /destroygangzone <id> ! Need to be logged in RCON !
+```pawn
+/creategangzone ! Need to be logged on RCON !
+/destroygangzone ! Need to be logged on RCON !
+```
 
 ## Images
 ![](https://i.imgur.com/yH8jmFo.png)
