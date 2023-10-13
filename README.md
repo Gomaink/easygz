@@ -26,8 +26,8 @@ Making sure of this, in your server.cfg in the "filterscripts" field add easygz.
 
 ## Commands
 
-/creategangzone
-/destroygangzone <id>
+- /creategangzone ! Need to be logged in RCON !
+- /destroygangzone <id> ! Need to be logged in RCON !
 
 To test, simply run the package:
 
