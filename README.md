@@ -26,8 +26,8 @@ Making sure of this, in your server.cfg in the "filterscripts" field add easygz.
 
 ## Commands
 
-/creategangzone
-/destroygangzone <id>
+- /creategangzone
+- /destroygangzone <id>
 
 To test, simply run the package:
 
