@@ -4,6 +4,12 @@
 
 A filterscript that helps you easily and dynamically create gangzones with SQLite saves.
 
+[img]https://i.imgur.com/yH8jmFo.png[/img]
+
+[img]https://i.imgur.com/hqDPQOv.png[/img]
+
+[img]https://i.imgur.com/juiEAZl.png[/img]
+
 ## Installation
 
 Simply install to your project:
@@ -21,7 +27,6 @@ Include in your code and begin using the library:
 ## Usage
 
 First make sure you are using the database available in this repository, whose name is "gangzones.db".
-
 Making sure of this, in your server.cfg in the "filterscripts" field add easygz.pwn, and then turn on gamemode.
 
 ## Commands
