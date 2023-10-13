@@ -14,15 +14,7 @@ Simply install to your project:
 sampctl package install Gomaink/easygz
 ```
 
-Include in your code and begin using the library:
-
-```pawn
-#include <easygz_inc>
-```
-
-## Usage
-
-First make sure you are using the database available in this repository, whose name is "gangzones.db".
+First make sure you are using the database available in this repository, whose name is "gangzones.db", it must be in the "scriptfiles" folder.
 Making sure of this, in your server.cfg in the "filterscripts" field add easygz.pwn, and then turn on gamemode.
 
 ## Commands
