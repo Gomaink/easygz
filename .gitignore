@@ -7,6 +7,9 @@
 *.lst
 *.asm
 
+# vscode
+vscode/
+
 # Vendor directory for dependencies
 dependencies/
 

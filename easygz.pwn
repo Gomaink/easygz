@@ -30,11 +30,11 @@ public OnFilterScriptInit()
         SendRconCommand("exit");
     }else { print("\"gangzones.db\" connected!"); }
 
-	new DBResult:result;
+	new DBResult:result, i=1;
     result = db_query(db_handle, "SELECT * FROM `gangzones`");
-	if(db_num_rows(result) != 0) 
-    {
-        for (new i = 0; i < db_num_rows(result); i ++) if (i < MAX_GANG_ZONES)
+    if(db_num_rows(result) > 0)
+	{
+		do
 		{
 			GangzoneData[i][gangzoneExist] = true;
             GangzoneData[i][gangzoneDBID] = db_get_field_assoc_int(result,"gzID");
@@ -46,9 +46,11 @@ public OnFilterScriptInit()
            	GangzoneData[i][gangzoneMaxX] = db_get_field_assoc_float(result,"gzMaxX");
            	GangzoneData[i][gangzoneMaxY] = db_get_field_assoc_float(result,"gzMaxY");
 			Gangzone_Refresh(i);
+            i++;
 		}
-    }
-    db_free_result(result);
+		while(db_next_row(result));
+	}
+	db_free_result(result);
     return 1;
 }
 
@@ -82,6 +84,8 @@ CMD:creategangzone(playerid, params[])
 
         new Float:minx = GetPVarFloat(playerid, "gzMinX");
         new Float:miny = GetPVarFloat(playerid, "gzMinY");
+        DeletePVar(playerid, "gzMinX");
+        DeletePVar(playerid, "gzMinY");
 
         GetPlayerPos(playerid, maxx, maxy, z);
         new gangzoneid = Gangzone_Create(name, minx, miny, maxx, maxy);
@@ -131,9 +135,18 @@ public Gangzone_Create(name[48], Float:minx, Float:miny, Float:maxx, Float:maxy)
             GangzoneData[i][gangzoneOwner] = 0;
             GangzoneData[i][gangzoneColor] = 0xB4B5B7FF;
             Gangzone_Refresh(i);
-            new DBResult:result = db_query(db_handle, "INSERT INTO `gangzones` (`gzOwner`) VALUES(0)");
-			db_free_result(result);
-			OnGangzoneCreated(i);
+
+            format(query, sizeof(query), "INSERT INTO `gangzones` (`gzName`, `gzOwner`, `gzColor`, `gzMinX`, `gzMinY`, `gzMaxX`, `gzMaxY`) VALUES('%s', %d, %d, %f, %f, %f, %f)",
+                GangzoneData[i][gangzoneName],
+                GangzoneData[i][gangzoneOwner],
+                GangzoneData[i][gangzoneColor],
+                GangzoneData[i][gangzoneMinX],
+                GangzoneData[i][gangzoneMinY],
+                GangzoneData[i][gangzoneMaxX],
+                GangzoneData[i][gangzoneMaxY]);
+            new DBResult:result = db_query(db_handle, query);
+            printf(query);
+            db_free_result(result);
             return i;
         }
     }
@@ -173,7 +186,7 @@ Gangzone_Refresh(gzid)
 	return 1;
 }
 
-Gangzone_Save(gzid)
+/*Gangzone_Save(gzid)
 {
 	format(query, sizeof(query), "UPDATE `gangzones` SET `gzName` = '%s', `gzOwner` = '%d', `gzColor` = '%d', `gzMinX` = '%f', `gzMinY` = '%f', `gzMaxX` = '%f', `gzMaxY` = '%f' WHERE `gzID` = '%d'",
   	GangzoneData[gzid][gangzoneName],
@@ -187,24 +200,7 @@ Gangzone_Save(gzid)
  	);
  	new DBResult:result = db_query(db_handle, query);
 	return db_free_result(result);
-}
-
-forward OnGangzoneCreated(gzid);
-public OnGangzoneCreated(gzid)
-{
-	if (gzid == -1 || !GangzoneData[gzid][gangzoneExist])
-	    return 0;
-
-	new DBResult:result;
-	format(query, sizeof(query), "SELECT * FROM `gangzones` WHERE `gzID` = '%d'", gzid);
-	result = db_query(db_handle, query);
-	if(db_num_rows(result) != 0) 
-		GangzoneData[gzid][gangzoneDBID] = db_get_field_assoc_int(result,"gzID");
-	
-	Gangzone_Save(gzid);
-	db_free_result(result);
-	return 1;
-}
+}*/
 
 GangzonesShowForPlayer(playerid)
 {
